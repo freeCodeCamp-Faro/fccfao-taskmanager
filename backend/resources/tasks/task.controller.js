@@ -30,4 +30,10 @@ router.patch('/:id', async (req, res) => {
   res.status(200).json(task);
 });
 
+router.delete('/:id', async (req, res) => {
+  // Update, force running mongoose validators, and return the updated object
+  const task = await Task.findByIdAndDelete(req.params.id);
+  res.status(204).json(task);
+});
+
 module.exports = router;
