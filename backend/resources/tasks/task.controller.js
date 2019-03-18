@@ -7,30 +7,27 @@ router.get('/', async (req, res) => {
   // router.get(['/', '/:id'], function(req, res) {
   const task = await Task.find();
 
-  res.json(task);
+  res.status(200).json(task);
 });
 
 router.get('/:id', async (req, res) => {
   const task = await Task.findById(req.params.id);
 
-  res.json(task);
+  res.status(200).json(task);
 });
 
 router.post('/', async (req, res) => {
-  console.log(req.body);
   const task = await Task.create(req.body);
-
-  res.json(task);
+  res.status(201).json(task);
 });
 
-// router.post('/', function(req, res) {
-//   console.log(req.body);
-//   const newTask = new TaskModel(req.body);
-
-//   newTask
-//     .save()
-//     .then(doc => res.json(doc))
-//     .catch(err => res.send(err));
-// });
+router.patch('/:id', async (req, res) => {
+  // Update, force running mongoose validators, and return the updated object
+  const task = await Task.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true
+  });
+  res.status(200).json(task);
+});
 
 module.exports = router;
