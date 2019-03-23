@@ -6,15 +6,15 @@ class App extends Component {
     tasks: [
       {
         id: 1,
-        title: 'do laundry',
-        completed: 'yes',
-        priority: 'red'
+        title: 'do laundry do laundry do laundry do laundry do laundry ',
+        priority: 'red',
+        completed: false
       },
       {
         id: 2,
         title: 'buy milk',
-        completed: 'no',
-        priority: '#333'
+        priority: '#333',
+        completed: false
       }
     ]
   };
@@ -24,6 +24,7 @@ class App extends Component {
       tasks: this.state.tasks.map(task => {
         if (task.id === id) {
           task.completed = !task.completed;
+          console.log(task);
         }
         return task;
       })

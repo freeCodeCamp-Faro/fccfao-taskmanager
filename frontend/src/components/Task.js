@@ -12,12 +12,19 @@ export default class Task extends Component {
 
   render() {
     const { id, title } = this.props.task;
+    const ellipsis = {
+      display: 'inline-block',
+      width: '80%',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis'
+    };
 
     return (
       <div>
         <li className="list-group-item d-flex justify-content-between mb-2">
           <div className="circle" style={this.getStyle()} />
-          {title}
+          <span style={ellipsis}>{title}</span>
           <input
             type="checkbox"
             className="float-right"
