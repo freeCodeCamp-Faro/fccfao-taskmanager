@@ -12,6 +12,7 @@ class TaskList extends Component {
             key={task.id}
             task={task}
             markComplete={this.props.markComplete}
+            handleExpand={this.props.handleExpand}
           />
         );
       })
