@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FaPen, FaTrashAlt } from 'react-icons/fa';
 
 export default class Task extends Component {
   getStyle = () => {
@@ -25,12 +26,12 @@ export default class Task extends Component {
         <div>
           <li className="list-group-item d-flex justify-content-between mb-2">
             <div style={this.getStyle()} />
-            <span
+            <h6
               style={ellipsis}
               onClick={this.props.handleExpand.bind(this, id)}
             >
               {title}
-            </span>
+            </h6>
             <input
               type="checkbox"
               className="float-right checkbox"
@@ -42,15 +43,15 @@ export default class Task extends Component {
     } else {
       return (
         <div>
-          <li className="list-group-item mb-2 ">
+          <li className="list-group-item mb-2">
             <div className="d-flex justify-content-between mb-2">
               <div style={this.getStyle()} />
-              <span
+              <h6
                 style={ellipsis}
                 onClick={this.props.handleExpand.bind(this, id)}
               >
                 {title}
-              </span>
+              </h6>
               <input
                 type="checkbox"
                 className="float-right checkbox"
@@ -59,13 +60,21 @@ export default class Task extends Component {
             </div>
             <div>
               <p>{description}</p>
-              <p>Due Date: </p>
+              <p className="text-muted">Due Date: </p>
               <p> {date}</p>
-              <p>Labels: </p>
+              <p className="text-muted">Labels: </p>
               <p> {label}</p>
             </div>
-            <button> Edit</button>
-            <button> Delete</button>
+            <div className="text-right">
+              <button className="btn-round btn-green mr-2">
+                {' '}
+                <FaPen />
+              </button>
+              <button className="btn-round btn-red">
+                {' '}
+                <FaTrashAlt />
+              </button>
+            </div>
           </li>
         </div>
       );
