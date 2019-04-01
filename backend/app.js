@@ -26,9 +26,15 @@ app.use(express.json());
 
 app.use('/tasks', tasksRouter);
 
-app.use((req, res, next) => {
+app.use('*', (req, res, next) => {
   console.log('Not found');
-  return next({ status: 404, message: 'not found' });
+  return next({ status: 404, message: 'Not found' });
+});
+
+app.use((err, req, res, next) => {
+  const status = err.status || 500;
+  const message = err.message || 'Error!';
+  res.status(status).json(message);
 });
 
 const listener = app.listen(port, () => {
