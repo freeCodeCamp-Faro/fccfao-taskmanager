@@ -13,9 +13,9 @@ class App extends Component {
           'Lorem ipsum dolor sit amet, consectetur ex adipiscing elit, sed do eiusmod tempor incid idunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
         date: '23 - September - 2017',
         label: 'design',
-        priority: 'red',
+        priority: 'high',
         completed: false,
-        expand: true
+        expand: false
       },
       {
         id: 2,
@@ -24,7 +24,7 @@ class App extends Component {
           'Lorem ipsum dolor sit amet, consectetur ex adipiscing elit, sed do eiusmod tempor incid idunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
         date: '23 - September - 2017',
         label: 'design',
-        priority: '#333',
+        priority: 'medium',
         completed: false,
         expand: false
       }

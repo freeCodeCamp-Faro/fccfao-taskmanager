@@ -1,6 +1,13 @@
-body {
-  background-color: rgba(63, 152, 253, 0.15) !important;
+:root {
+  --todo-blue: rgba(63, 152, 253, 0.15);
+
+  --background: var(--todo-blue);
 }
+
+.todo {
+  background-color: var(--todo-blue);
+}
+
 .ellipsis {
   display: inline-block;
   width: 80%;
@@ -29,4 +36,20 @@ body {
 }
 .btn-green {
   background-color: #01f58a;
+}
+
+.priority {
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+}
+
+.priority.low {
+  background-color: green;
+}
+.priority.medium {
+  background-color: orange;
+}
+.priority.high {
+  background-color: red;
 }

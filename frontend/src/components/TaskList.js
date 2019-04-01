@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import Task from './Task';
 
 class TaskList extends Component {
-  render() {
-    const { tasks } = this.props;
+  componentDidMount() {
+    //here be fetch
+  }
 
-    const taskList = tasks.length ? (
-      tasks.map(task => {
+  renderTasks = tasks => {
+    if (tasks.length > 0) {
+      return tasks.map(task => {
         return (
           <Task
             key={task.id}
@@ -15,12 +17,13 @@ class TaskList extends Component {
             handleExpand={this.props.handleExpand}
           />
         );
-      })
-    ) : (
-      <p>No tasks</p>
-    );
+      });
+    }
+    return <li>you have no tasks</li>;
+  };
 
-    return <ul className="list-group">{taskList}</ul>;
+  render() {
+    return <ul className="list-group">{this.renderTasks(this.props.tasks)}</ul>;
   }
 }
 
