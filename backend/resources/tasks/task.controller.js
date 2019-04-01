@@ -6,8 +6,9 @@ exports.getAllTasks = async (req, res) => {
   res.status(200).json(task);
 };
 
-exports.getTask = async (req, res) => {
+exports.getTask = async (req, res, next) => {
   const task = await Task.findById(req.params.id);
+  if (!task) return next({ status: 404, message: 'Task not found' });
   res.status(200).json(task);
 };
 
@@ -22,10 +23,12 @@ exports.updateTask = async (req, res) => {
     new: true,
     runValidators: true
   });
+  if (!task) return next({ status: 404, message: 'Task not found' });
   res.status(200).json(task);
 };
 
 exports.deleteTask = async (req, res) => {
   const task = await Task.findByIdAndDelete(req.params.id);
+  if (!task) return next({ status: 404, message: 'Task not found' });
   res.status(204).json(task);
 };
