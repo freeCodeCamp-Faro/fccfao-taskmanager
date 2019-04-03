@@ -25,7 +25,6 @@ export default class Task extends Component {
           </div>
         </Fragment>
       );
-      return null;
     }
   };
 
