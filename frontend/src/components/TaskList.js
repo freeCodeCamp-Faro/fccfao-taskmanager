@@ -34,7 +34,6 @@ class TaskList extends Component {
       tasks: this.state.tasks.map(task => {
         if (task.id === id) {
           task.expand = !task.expand;
-          console.log(task);
         } else {
           task.expand = false;
         }
