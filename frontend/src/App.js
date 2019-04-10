@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+
 import './App.css';
 
-import TaskList from './components/TaskList';
+import AppRouter from './routers/AppRouter';
 
 class App extends Component {
   render() {
@@ -10,7 +11,7 @@ class App extends Component {
         <div className="row">
           <div className="col-xs-10 col-md-8 mx-auto">
             <p>Hello World!</p>
-            <TaskList />
+            <AppRouter />
           </div>
         </div>
       </div>

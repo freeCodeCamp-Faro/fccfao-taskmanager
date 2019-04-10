@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import axios from 'axios';
 
-import Task from './Task';
+import Task from '../components/Task';
 
 class TaskList extends Component {
   state = {
@@ -11,7 +11,7 @@ class TaskList extends Component {
 
   componentDidMount() {
     //here be fetch
-    axios.get('tasksData.json').then(res => {
+    axios.get('TasksData.json').then(res => {
       this.setState({
         tasks: res.data.data
       });
