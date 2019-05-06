@@ -1,6 +1,8 @@
 import React, { Fragment, Component } from 'react';
 import { FaPen, FaTrashAlt } from 'react-icons/fa';
 
+import styles from './Task.module.css';
+
 export default class Task extends Component {
   renderInfo = () => {
     const { expand, description, date, label } = this.props.task;
@@ -32,13 +34,13 @@ export default class Task extends Component {
     const { id, priority } = this.props.task;
 
     return (
-      <li className="list-group-item mb-2">
+      <li className={`${styles.Task} list-group-item mb-2`}>
         <div className="d-flex justify-content-between align-middle">
           <div
             className="w-100 d-inline-flex"
             onClick={this.props.handleExpand.bind(this, id)}
           >
-            <div className={`priority ${priority} mr-2`} />
+            <div className={`${styles.priorityCircle} ${priority} mr-2`} />
             <h6 className="ellipsis">{this.props.task.title}</h6>
           </div>
           <input

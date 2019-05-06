@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import axios from 'axios';
 
-import Task from '../components/Task';
+import Task from '../components/Task/Task';
 
 class TaskList extends Component {
   state = {

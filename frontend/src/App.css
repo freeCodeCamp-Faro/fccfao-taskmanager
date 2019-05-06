@@ -37,19 +37,3 @@
 .btn-green {
   background-color: #01f58a;
 }
-
-.priority {
-  border-radius: 50%;
-  height: 25px;
-  width: 25px;
-}
-
-.priority.low {
-  background-color: green;
-}
-.priority.medium {
-  background-color: orange;
-}
-.priority.high {
-  background-color: red;
-}
