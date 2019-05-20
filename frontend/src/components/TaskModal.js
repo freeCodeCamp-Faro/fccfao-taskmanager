@@ -1,38 +1,35 @@
 import React from 'react';
-// import TaskFormContainer from '../Containers/TaskFormContainer';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 class TaskModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false
+      modalIsOpen: false
     };
-
-    this.toggle = this.toggle.bind(this);
   }
 
-  toggle() {
+  toggleModal = () => {
     this.setState(prevState => ({
-      modal: !prevState.modal
+      modalIsOpen: !prevState.modalIsOpen
     }));
-  }
+  };
 
   render() {
     return (
       <div>
-        <Button color="primary" onClick={this.toggle}>
+        <Button color="primary" onClick={this.toggleModal}>
           Add Task
         </Button>
         <Modal
-          isOpen={this.state.modal}
-          toggle={this.toggle}
+          isOpen={this.state.modalIsOpen}
+          toggle={this.toggleModal}
           className={this.props.className}
         >
-          <ModalHeader toggle={this.toggle}>Add task</ModalHeader>
-          <ModalBody>{/*<TaskFormContainer />*/}</ModalBody>
+          <ModalHeader toggle={this.toggleModal}>Add task</ModalHeader>
+          <ModalBody />
           <ModalFooter>
-            <Button color="secondary" onClick={this.toggle}>
+            <Button color="secondary" onClick={this.toggleModal}>
               Close
             </Button>
           </ModalFooter>
