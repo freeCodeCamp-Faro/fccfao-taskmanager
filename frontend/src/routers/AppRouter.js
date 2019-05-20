@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
-import Home from '../views/Home';
+import TaskList from '../views/TaskList';
 import About from '../views/About';
 import Tasks from '../views/Tasks';
 import Header from '../components/Header';
@@ -22,7 +22,7 @@ const AppRouter = () => {
           </li>
         </ul>
         <Switch>
-          <Route path="/" component={Home} exact />
+          <Route path="/" component={TaskList} exact />
           <Route path="/about" component={About} />
           <Route path="/tasks" component={Tasks} />
         </Switch>
