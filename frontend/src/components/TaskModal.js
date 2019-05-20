@@ -6,35 +6,33 @@ class TaskModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false
+      modalIsOpen: false
     };
-
-    this.toggle = this.toggle.bind(this);
   }
 
-  toggle() {
+  toggleModal = () => {
     this.setState(prevState => ({
-      modal: !prevState.modal
+      modalIsOpen: !prevState.modalIsOpen
     }));
-  }
+  };
 
   render() {
     return (
       <div>
-        <Button color="primary" onClick={this.toggle}>
+        <Button color="primary" onClick={this.toggleModal}>
           Add Task
         </Button>
         <Modal
-          isOpen={this.state.modal}
-          toggle={this.toggle}
+          isOpen={this.state.modalIsOpen}
+          toggle={this.toggleModal}
           className={this.props.className}
         >
-          <ModalHeader toggle={this.toggle}>Add task</ModalHeader>
+          <ModalHeader toggle={this.toggleModal}>Add task</ModalHeader>
           <ModalBody>
             <TaskFormContainer />
           </ModalBody>
           <ModalFooter>
-            <Button color="secondary" onClick={this.toggle}>
+            <Button color="secondary" onClick={this.toggleModal}>
               Close
             </Button>
           </ModalFooter>
