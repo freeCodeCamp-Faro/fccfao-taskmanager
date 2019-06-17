@@ -1,4 +1,5 @@
 import React from 'react';
+import TaskFormContainer from '../Containers/TaskFormContainer';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 class TaskModal extends React.Component {
@@ -27,7 +28,9 @@ class TaskModal extends React.Component {
           className={this.props.className}
         >
           <ModalHeader toggle={this.toggleModal}>Add task</ModalHeader>
-          <ModalBody />
+          <ModalBody>
+            <TaskFormContainer />
+          </ModalBody>
           <ModalFooter>
             <Button color="secondary" onClick={this.toggleModal}>
               Close
