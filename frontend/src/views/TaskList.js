@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import Task from '../components/Task/Task';
+import TaskModal from '../components/TaskModal';
 
 class TaskList extends Component {
   state = {
@@ -59,7 +60,12 @@ class TaskList extends Component {
   };
 
   render() {
-    return <ul className="list-group">{this.renderTasks(this.props.tasks)}</ul>;
+    return (
+      <div>
+        <ul className="list-group">{this.renderTasks(this.props.tasks)}</ul>
+        <TaskModal />
+      </div>
+    );
   }
 }
 
