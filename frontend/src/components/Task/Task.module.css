@@ -1,0 +1,25 @@
+.Task {
+  background-color: green !important;
+}
+
+.Task:hover {
+  background-color: yellow !important;
+}
+
+.priorityCircle {
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+}
+
+.low-priority {
+  background-color: green;
+}
+
+.medium-priority {
+  background-color: orange;
+}
+
+.high-priority {
+  background-color: red;
+}
