@@ -16,6 +16,9 @@ const AppRouter = () => {
           <li>
             <Link to="/about">About</Link>
           </li>
+          <li>
+            <Link to="/tasks">Tasks</Link>
+          </li>
         </ul>
         <Switch>
           <Route path="/" component={TaskList} exact />
