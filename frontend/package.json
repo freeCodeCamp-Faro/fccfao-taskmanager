@@ -7,7 +7,7 @@
     "bootstrap": "^4.3.1",
     "husky": "^1.2.1",
     "lint-staged": "^8.1.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "node-sass": "^4.11.0",
     "prettier": "^1.15.3",
     "react": "^16.6.3",
